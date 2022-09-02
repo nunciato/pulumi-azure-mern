@@ -1,0 +1,5 @@
+config:
+  azure-native:location: WestUS
+  mern-azure-infra:gh_token:
+    secure: AAABAESO1F119dqE8LBeAxdEajBhnLau5LwraTP5OKfwLAVMxFevoBgJsC47Vf9q9VKBpI5HM4YpPnGFmw+YDuvX8fKBIoNJ
+  mern-azure-infra:repo: https://github.com/nunciato/pulumi-azure-mern

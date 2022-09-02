@@ -1,0 +1,3 @@
+name: mern-azure-infra
+description: A minimal Azure Native TypeScript Pulumi program
+runtime: nodejs

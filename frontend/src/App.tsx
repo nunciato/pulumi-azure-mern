@@ -26,7 +26,7 @@ class App extends Component {
 
     // Retrieve all grocery-list items and write them to local component state.
     private async fetchItems() {
-        const response = await fetch("/api/items");
+        const response = await fetch(import.meta.env.VITE_API_URL?.toString().trim() + "/api/items");
         const items = await response.json();
         this.setState({ items });
     }
@@ -40,7 +40,7 @@ class App extends Component {
         }
 
         // Make an HTTP POST to the items endpoint.
-        await fetch("/api/items", {
+        await fetch(import.meta.env.VITE_API_URL?.toString().trim() + "/api/items", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name }),
@@ -52,7 +52,7 @@ class App extends Component {
 
     // Delete an item from the grocery list.
     private async deleteItem(item: Item) {
-        await fetch(`/api/items/${item._id}`, {
+        await fetch(`${import.meta.env.VITE_API_URL?.toString().trim()}/api/items/${item._id}`, {
             method: "DELETE",
         });
 
@@ -61,7 +61,7 @@ class App extends Component {
 
     // Cross an item off the list (or uncross it).
     private async toggleItem(item: Item) {
-         await fetch(`/api/items/${item._id}`, {
+         await fetch(`${import.meta.env.VITE_API_URL?.toString().trim()}/api/items/${item._id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name: item.name, done: !item.done }),
